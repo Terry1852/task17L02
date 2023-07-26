@@ -1,0 +1,82 @@
+body{
+    background-color: peachpuff;
+}
+.Hangman {
+    width: 400px;
+    color: black;
+    text-align: center;
+    zoom: 1.3;
+}
+
+.Hangman img {
+    border: 5px solid grey;
+    height: 160px;
+    box-shadow: 0 10px 30px black;
+}
+
+.Hangman h2 {
+    font-size: 1.50rem;
+    font-weight: 400;
+}
+
+.Hangman-word {
+    letter-spacing: 1rem;
+    margin: 0.4em -1em 0.2em 0;
+    font-size: 1.5rem;
+}
+
+.Hangman-button {
+    text-align: center;
+    display: inline-block;
+    width: 250px;
+}
+
+.Hangman button {
+    border: 1px;
+    border-radius: 10px;
+    font-family: Segoe UI;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 20px;
+    margin : 5px 2px 2px 2px;
+    letter-spacing: 1px;
+    background-color: brown;
+    box-shadow: 0 6px;
+    padding-top: 4px;
+    
+}
+
+.Hangman button:hover {
+    background-color: rgb(41, 223, 251);
+}
+
+.Hangman button:disabled {
+    background: antiquewhite;
+    color: antiquewhite;
+    box-shadow: 0 6px grey;
+
+}
+
+#reset {
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: orangered;
+    box-shadow: 0 6px orangered;
+}
+
+#reset:hover{
+    background: orangered;
+}
+
+.guessedLetters {
+    font-family: helvetica;
+    font-size: 15px;
+
+}
+
+.PLanguage {
+    font-family:  helvetica;
+    font-size: 13px;
+}
