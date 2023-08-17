@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Help from "./help";
+// import Keyboard from './keyboard';
 import { randomWord } from "../Store/dictionary";
 import '../Store/Hangman.css';
 import image4 from "../Images/state4.GIF";
@@ -75,6 +77,7 @@ class Hangman extends Component {
             <div className="Hangman">
                 <h2>Hangman</h2>
                 <img src={this.props.images[this.state.noOfWrong]} alt="Hangman" />
+                <Help className="HelpButton"/>
                 <p className="guessedLetters">
                     {/* This code shows how many chances/guesses are left. */}
                     Chances Left: {this.props.maxWrong - this.state.noOfWrong} / {this.props.maxWrong}
@@ -90,8 +93,11 @@ class Hangman extends Component {
                         Restart?
                     </button>
                 )}
+                {/* <Keyboard guessed={this.guessed}/> */}
+               
 
-            </div>
+            </div>  
+            
         )
     }
 
