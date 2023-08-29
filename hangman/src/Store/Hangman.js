@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Help from "./help";
-// import Keyboard from './keyboard';
 import { randomWord } from "../Store/dictionary";
 import '../Store/Hangman.css';
 import image4 from "../Images/state4.GIF";
@@ -93,7 +92,7 @@ class Hangman extends Component {
                         Restart?
                     </button>
                 )}
-                {/* <Keyboard guessed={this.guessed}/> */}
+              
                
 
             </div>  

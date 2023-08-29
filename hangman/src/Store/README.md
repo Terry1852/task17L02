@@ -1,4 +1,8 @@
 # Getting Started with Hnagman App
+1.Open the folder in VScode.
+2.Request an npm start and use the localhost given to run the game on the web.
+example => http://localhost:3000
+
  The rules of the hangman!
  1.The game sets a default programming language for you
  2.You should try to guess the word by suggesting on letter at a time.
@@ -17,6 +21,6 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I.e Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
