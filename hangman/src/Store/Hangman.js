@@ -14,7 +14,7 @@ import image11 from "../Images/state11.GIF";
 class Hangman extends Component {
     static defaultProps = {
         //The number of guessing a user has.
-        maxWrong:8,
+        maxWrong:7,
         images: [image4, image5, image6, image7, image8, image9, image10, image11 ]
 
     };

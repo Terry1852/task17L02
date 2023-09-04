@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Help = () => {
 
     const handleClick = () => {
@@ -21,3 +23,5 @@ const Help = () => {
     };
 
 export default Help;
+
+
