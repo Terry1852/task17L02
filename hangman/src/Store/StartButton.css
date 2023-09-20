@@ -1,0 +1,12 @@
+Body {
+    background-color: whitesmoke !important;
+}
+
+.StartButton {
+    background-color: grey !important;
+    color: aqua;
+    font-family: Georgia;
+    cursor: not-allowed ;
+    display: inline-block !important;
+
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Help from "./help";
 import { randomWord } from "../Store/dictionary";
+import StartButton from "./StartButton"
 import '../Store/Hangman.css';
 import image4 from "../Images/state4.GIF";
 import image5 from "../Images/state5.GIF";
@@ -18,9 +19,12 @@ class Hangman extends Component {
         images: [image4, image5, image6, image7, image8, image9, image10, image11 ]
 
     };
+    
 
     constructor(props) {
         super(props);
+        this.state = {gameStarted: false,
+        };
         this.state = {
             noOfWrong: 0, 
             guessed: new Set(),
@@ -28,7 +32,9 @@ class Hangman extends Component {
         };
         this.handleGuess = this.handleGuess.bind(this);
         this.reset = this.reset.bind(this);
+
     }
+
     //This function is for restarting the game.
     reset() {
         this.setState({
@@ -65,6 +71,10 @@ class Hangman extends Component {
         ))
     }
 
+    handleStartClick = () => {
+        this.setState({gameStarted: true});
+    }
+
     render() {
         const gameOver = this.state.noOfWrong >= this.props.maxWrong;
         const isWinner = this.guessedWord().join("") === this.state.answer;
@@ -74,30 +84,35 @@ class Hangman extends Component {
         let restart = gameOver || isWinner;
         return (
             <div className="Hangman">
-                <h2>Hangman</h2>
-                <img src={this.props.images[this.state.noOfWrong]} alt="Hangman" />
-                <Help className="HelpButton"/>
-                <p className="guessedLetters">
-                    {/* This code shows how many chances/guesses are left. */}
-                    Chances Left: {this.props.maxWrong - this.state.noOfWrong} / {this.props.maxWrong}
-                </p>
-                <p className="PLanguage">Guess the Programming Language</p>
-                <p className="Hangman-word">
-                    {/* If the game is not over the user can keep on guessing */}
-                    {!gameOver ? this.guessedWord() : this.state.answer}
-                </p>
-                <p className="Hangman-button">{gameState}</p>
-                {restart && (
-                    <button id="reset" onClick={this.reset}>
-                        Restart?
-                    </button>
-                )}
-              
-               
+                {this.state.gameStarted ? (
+                                 <div>
+                                 <h2>Hangman</h2>
+                                 <img src={this.props.images[this.state.noOfWrong]} alt="Hangman" />
+                                 <Help className="HelpButton"/>
+                                 <p className="guessedLetters">
+                                     {/* This code shows how many chances/guesses are left. */}
+                                     Chances Left: {this.props.maxWrong - this.state.noOfWrong} / {this.props.maxWrong}
+                                 </p>
+                                 <p className="PLanguage">Guess the Programming Language</p>
+                                 <p className="Hangman-word">
+                                     {/* If the game is not over the user can keep on guessing */}
+                                     {!gameOver ? this.guessedWord() : this.state.answer}
+                                 </p>
+                                 <p className="Hangman-button">{gameState}</p>
+                                 {restart && (
+                                     <button id="reset" onClick={this.reset}>
+                                         Restart?
+                                     </button>
+                                 )}
+                 
+                                 </div>
 
-            </div>  
-            
-        )
+                ) : (
+                    <StartButton onStartClick={this.handleStartClick} />
+
+                )}
+            </div>   
+        );
     }
 
 }
